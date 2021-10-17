@@ -1,10 +1,8 @@
-const path = require('path');
+import * as path from 'path';
 import { Configuration, HotModuleReplacementPlugin } from "webpack";
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import ESLintPlugin from "eslint-webpack-plugin";
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const config: Configuration = {
+export const config: Configuration = {
   mode: 'development',
   entry: "./src/index.tsx",
   devtool: 'inline-source-map',
@@ -47,13 +45,7 @@ const config: Configuration = {
       new HtmlWebpackPlugin({
         template: "src/index.html",
       }),
-      new HotModuleReplacementPlugin(),
-      new ESLintPlugin({
-        extensions: ["js", "jsx", "ts", "tsx"],
-      }),
-      new ForkTsCheckerWebpackPlugin({
-        async: false
-      })
+      new HotModuleReplacementPlugin()
     ],
 };
 

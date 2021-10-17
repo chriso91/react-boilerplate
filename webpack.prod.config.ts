@@ -1,11 +1,7 @@
-
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
-
-const path = require('path');
+import * as path from 'path';
 import { Configuration } from "webpack";
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require("eslint-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: Configuration = {
   mode: "production",
@@ -39,12 +35,6 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
-    }),
-    new ForkTsCheckerWebpackPlugin({
-      async: false,
-    }),
-    new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new CleanWebpackPlugin(),
   ],
