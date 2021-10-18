@@ -2,6 +2,8 @@ import * as React from 'react';
 import {useState} from 'react';
 import {FC} from "react";
 
+import style from './FeatureOne.scss';
+
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 
 import {
@@ -16,7 +18,7 @@ const FeatureOne:FC = () => {
   const [oneAmount, setOneAmount] = useState(featureOne);
 
   return (
-    <div>
+    <div className={style.color}>
       <h1>{featureOne}</h1>
       <input
         value={oneAmount}
