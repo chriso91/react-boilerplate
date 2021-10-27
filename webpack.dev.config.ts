@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { Configuration, HotModuleReplacementPlugin } from "webpack";
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
+import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 export const config: Configuration = {
   mode: 'development',
@@ -63,7 +63,7 @@ export const config: Configuration = {
         template: "src/index.html",
       }),
       new HotModuleReplacementPlugin(),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin()
     ],
 };
 

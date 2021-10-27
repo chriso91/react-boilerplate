@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../app/store'
 
 // Define a type for the slice state
-export interface FeatureOneSlice {
+export interface FeatureOneSliceType {
   value: string
 }
 
 // Define the initial state using that type
-const initialState: FeatureOneSlice = {
+const initialState: FeatureOneSliceType = {
   value: 'initial',
 }
 
@@ -23,7 +23,6 @@ export const featureOneSlice = createSlice({
 
 export const { change } = featureOneSlice.actions;
 
-type select = (state: RootState) => string;
-export const selectFeatureOne:select = (state: RootState) => state.one.value;
+export const selectFeatureOne = (state: RootState) => state.one.value;
 
 export default featureOneSlice.reducer;

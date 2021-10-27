@@ -6,7 +6,12 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.config.ts",
     "build": "webpack --config webpack.prod.config.ts",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "test": "jest --coverage --watchAll"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
