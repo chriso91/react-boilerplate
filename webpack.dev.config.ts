@@ -52,12 +52,6 @@ export const config: Configuration = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-    devServer: {
-      static: path.join(__dirname, "build"),
-      historyApiFallback: true,
-      port: 4000,
-      open: true,
-    },
     plugins: [
       new HtmlWebpackPlugin({
         template: "src/index.html",
